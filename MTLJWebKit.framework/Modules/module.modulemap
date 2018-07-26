@@ -1,0 +1,6 @@
+framework module MTLJWebKit {
+  umbrella header "MTLJWebKit.h"
+
+  export *
+  module * { export * }
+}
