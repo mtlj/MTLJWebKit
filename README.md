@@ -58,6 +58,8 @@ function setupMTLJWebViewJavascriptBridge(callback) {
 setupMTLJWebViewJavascriptBridge(function(bridge) {
     
     /* Initialize your app here */
+    
+    
     bridge.registerHandler('mtljcommand://fetchFansInfo', function(data, responseCallback) {
     	log('ObjC called parameter with', data)
 	var responseData = { 'Javascript Says info':'lilei' }
