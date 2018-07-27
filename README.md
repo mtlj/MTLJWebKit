@@ -37,7 +37,7 @@ webViewVC.originURL = xxxURL;
 [webViewVC callJSCommandHandler:[MTLJJSCommandResponseBaseSubClass new]];
 ```
 
-4) Copy and paste `setupMTLJWebViewJavascriptBridge` into your JS:
+5) Copy and paste `setupMTLJWebViewJavascriptBridge` into your JS:
 
 ```javascript
 function setupMTLJWebViewJavascriptBridge(callback) {
@@ -52,7 +52,7 @@ function setupMTLJWebViewJavascriptBridge(callback) {
 }
 ```
 
-5) Finally, call `setupMTLJWebViewJavascriptBridge` and then use the bridge to register handlers and call ObjC handlers:
+6) Finally, call `setupMTLJWebViewJavascriptBridge` and then use the bridge to register handlers and call ObjC handlers:
 
 ```javascript
 setupMTLJWebViewJavascriptBridge(function(bridge) {
