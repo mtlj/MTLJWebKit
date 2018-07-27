@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint MTWalletSDK.podspec' to ensure this is a
+#  Be sure to run `pod spec lint MTLJWebKit.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "MTLJWebKit"
   s.version      = "1.0.0"
-  s.summary      = "WebKitSDK"
+  s.summary      = "MTLJWebKit."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,10 +25,10 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-      WebKitSDK
+    A short description of WebKitFramework
                    DESC
 
-  s.homepage     = "http:///MTLJWebKit"
+  s.homepage     = "https://github.com/mtlj/MTLJWebKit"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -54,9 +54,9 @@ Pod::Spec.new do |s|
   #
 
   s.author             = { "lj" => "" }
-  # Or just: s.author    = ""
-  # s.authors            = { "" => "" }
-  # s.social_media_url   = "http://twitter.com/"
+  # Or just: s.author    = "lj"
+  # s.authors            = { "lj" => "" }
+  # s.social_media_url   = "http://twitter.com/lj"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -80,8 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       =  {:path => '.'}
-  # { :git => "http://EXAMPLE/MTLJWebKit.git", :tag => "#{s.version}" }
+  s.source       =  { :git => "https://github.com/mtlj/MTLJWebKit.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -92,8 +91,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "MTLJWebKit", "MTLJWebKit/**/*.{h,m}"
-  # s.exclude_files = "MTLJWebKit/Vendor/**/*.h", "MTLJWebKit/TransitionAnimation/**/*.h"
+  # s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -106,7 +105,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  #s.resource  = "MTWalletSDK.bundle"
+  # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
@@ -123,8 +122,7 @@ Pod::Spec.new do |s|
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
-  s.dependency 'Masonry', '~> 1.1.0'
-  s.dependency 'ZipArchive', '~> 1.4.0'
+
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -136,5 +134,8 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+
+    s.dependency 'Masonry', '~> 1.1.0'
+    s.dependency 'ZipArchive', '~> 1.4.0'
 
 end
