@@ -10,25 +10,29 @@
 @class MTLJJSCommandHandlerBase;
 @class MTLJJSCommandResponseBase;
 
-
 @interface MTLJWebViewController : UIViewController
 @property (nonatomic, readonly) NSURL *currentURL;
 @property (nonatomic, copy) NSURL *originURL;
 @property (nonatomic, strong) NSDictionary *requestHeader;
 
 /**
- 注册JSCommandHandler，用于js调用原生做事情
+ 注册JSCommandHandler，用于处理JS发来的请求
 
- @param commandHandler 继承自JSCommandHandleBase的具体js命令
+ @param commandHandler JS请求的处理类（继承自JSCommandHandleBase）
  */
 - (void)registerJSCommandHandler:(MTLJJSCommandHandlerBase *)commandHandler;
 
 /**
  删除JSCommandHandler
 
- @param commandHandler 继承自JSCommandHandleBase的具体js命令
+ @param commandHandler 继承自JSCommandHandleBase的具体JS请求
  */
 - (void)removeJSCommandHandler:(MTLJJSCommandHandlerBase *)commandHandler;
 
+/**
+ 调用JS
+
+ @param commandHandler JS的响应处理类（继承自MTLJJSCommandResponseBase）
+ */
 - (void)callJSCommandHandler:(MTLJJSCommandResponseBase *)commandHandler;
 @end

@@ -9,13 +9,19 @@
 #import <Foundation/Foundation.h>
 @class MTLJWebViewController;
 
-
 /**
- 调用JS方法基类，每个指定的调用都需继承于此类
+ 调用JS的基类，每个指定的调用都需继承于此类
  */
 @interface MTLJJSCommandResponseBase : NSObject
-@property (nonatomic, strong) NSString *scheme;
-@property (nonatomic, strong) NSDictionary *argument;
+@property (nonatomic, strong) NSString *scheme; // 协议Scheme，按约定赋值
+@property (nonatomic, strong) NSDictionary *argument;   // 调用JS携带的参数
+
+/**
+ 处理JS的响应
+
+ @param webViewController webViewController 
+ @param responseData responseData一般为NSDictionary类型
+ */
 - (void)executeResponse:(MTLJWebViewController *)webViewController responseData:(id)responseData;
 
 @end
