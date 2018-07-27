@@ -17,12 +17,12 @@ Usage
 ```objc
 #import <MTLJWebKit/MTLJWebKit.h>
 ```
-...
 
 2) Instantiate MTLJWebViewController and set originURL property
 
 ```objc
 MTLJWebViewController *webViewVC = [[MTLJWebViewController alloc] init];
+webViewVC.originURL = xxxURL;
 ```
 
 3) Extends MTLJJSCommandHandlerBase class，override executeCommand:responseHandler: method and set scheme property，Register a JSCommandHandler in ObjC
@@ -57,14 +57,16 @@ function setupMTLJWebViewJavascriptBridge(callback) {
 ```javascript
 setupMTLJWebViewJavascriptBridge(function(bridge) {
     
-		bridge.registerHandler('mtljcommand://fetchFansInfo', function(data, responseCallback) {
-			  log('ObjC called parameter with', data)
-			  var responseData = { 'Javascript Says info':'lilei' }
-			  log('JS responding parameter with', responseData)
-			  responseCallback(responseData)
-		})
-		bridge.callHandler('mtljcommand://fetchPhoneInfo', {'platform': 'ios'}, function(response) {
-				log('JS got response', response)
+    /* Initialize your app here */
+    bridge.registerHandler('mtljcommand://fetchFansInfo', function(data, responseCallback) {
+    	log('ObjC called parameter with', data)
+	var responseData = { 'Javascript Says info':'lilei' }
+	log('JS responding parameter with', responseData)
+	responseCallback(responseData)
     })
-	})
+	
+    bridge.callHandler('mtljcommand://fetchPhoneInfo', {'platform': 'ios'}, function(response) {
+	log('JS got response', response)
+    })
+})
 ```
