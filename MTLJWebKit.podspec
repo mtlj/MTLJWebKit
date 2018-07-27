@@ -91,7 +91,6 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "MTLJWebKit", "./*.framework"
   # s.source_files  = "Classes", "Classes/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
@@ -120,6 +119,8 @@ Pod::Spec.new do |s|
 
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
+
+  s.vendored_frameworks = "MTLJWebKit.framework"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
